@@ -1,0 +1,19 @@
+# Secrets / local configuration
+**/src/main/resources/application.properties
+**/src/main/resources/application-local.properties
+
+# Node
+**/node_modules/
+
+# Java
+**/target/
+
+# Eclipse workspace
+FarmVerse/.metadata/
+
+# Eclipse project files
+**/.classpath
+**/.project
+**/.settings/
+
+**/startup.log
