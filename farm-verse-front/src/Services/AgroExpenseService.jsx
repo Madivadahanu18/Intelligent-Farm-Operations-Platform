@@ -1,31 +1,42 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:9696/farmverse";
+const EXP_URL = "http://localhost:9696/farmverse/exp";
+const GET_EXP_URL = "http://localhost:9696/farmverse/getexp";
+const DEL_EXP_URL = "http://localhost:9696/farmverse/agroexp";
+const EXP_ID_URL = "http://localhost:9696/farmverse/expid";
 
-const EXPENSE_URL = BASE_URL + "/exp";
-const EXPENSE_ID_URL = BASE_URL + "/exp-id";
-
-// Generate Expense ID
-export const getNewExpenseId = () => {
-  return axios.get(EXPENSE_ID_URL);
-};
-
-// Add Expense
 export const addAgroExpense = (expense) => {
-  return axios.post(EXPENSE_URL, expense);
+  return axios.post(EXP_URL, expense, {
+    withCredentials: true,
+  });
 };
 
-// Get All Expenses
-export const getAllAgroExpenses = () => {
-  return axios.get(EXPENSE_URL);
+export const updateAgroExpense = (expense) => {
+  return axios.put(EXP_URL, expense, {
+    withCredentials: true,
+  });
 };
 
-// Get Expense By ID
 export const getAgroExpenseById = (id) => {
-  return axios.get(`${EXPENSE_URL}/${id}`);
+  return axios.get(`${GET_EXP_URL}/${id}`, {
+    withCredentials: true,
+  });
 };
 
-// Delete Expense
-export const deleteAgroExpense = (id) => {
-  return axios.delete(`${EXPENSE_URL}/${id}`);
+export const getAllAgroExpenses = () => {
+  return axios.get(GET_EXP_URL, {
+    withCredentials: true,
+  });
+};
+
+export const deleteAgroExpenseById = (id) => {
+  return axios.delete(`${DEL_EXP_URL}/${id}`, {
+    withCredentials: true,
+  });
+};
+
+export const generateExpenseId = () => {
+  return axios.get(EXP_ID_URL, {
+    withCredentials: true,
+  });
 };

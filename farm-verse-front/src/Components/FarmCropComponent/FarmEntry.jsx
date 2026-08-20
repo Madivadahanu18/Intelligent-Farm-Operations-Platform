@@ -97,50 +97,69 @@ const FarmEntry = () => {
   }
 
   return (
-    <div className="container">
-      <div className="login-box">
-        <h2 className="text-center">New Farm Entry</h2>
-        <br />
+    <div 
+      style={{
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=2832&q=80')`,
+        height: '100vh',
+        overflowY: 'auto',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        padding: '40px 20px',
+        boxSizing: 'border-box'
+      }}
+    >
+      <div className="login-box" style={{ 
+        maxWidth: '500px', 
+        width: '100%',
+        textAlign: 'left',
+        background: 'rgba(255, 255, 255, 0.9)',
+        backdropFilter: 'blur(15px)',
+        WebkitBackdropFilter: 'blur(15px)',
+        borderRadius: '24px',
+        boxShadow: '0 25px 50px rgba(0,0,0,0.2)',
+        padding: '40px'
+      }}>
+        <h2 className="text-center" style={{ color: '#0f172a', fontWeight: '800', marginBottom: '20px' }}>Register New Farm</h2>
         <form>
-          <div className="form-group text-left">
-            <label>Farm Id: </label>
-            <input placeholder="Farm Id" name="farmId" className="form-control" value={newId} readOnly />
+          <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+            <label style={{ fontWeight: '600', color: '#475569' }}>Farm Id: </label>
+            <input placeholder="Farm Id" name="farmId" className="form-control" value={newId} readOnly style={{ borderRadius: '8px', border: '1px solid #cbd5e1', background: '#f1f5f9' }} />
           </div>
-          <div className="form-group text-left">
-            <label> Farm Name: </label>
-            <input placeholder="Farm Name" name="farmName" className="form-control" value={farm.farmName} onChange={onChangeHandler} />
-            {errors.farmName && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.farmName}</p>}
-          </div>
-
-          <div className="form-group text-left">
-            <label> Farm Area: </label>
-            <input placeholder="Farm Area" name="area" className="form-control" value={farm.area} onChange={onChangeHandler} />
-            {errors.area && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.area}</p>}
+          <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+            <label style={{ fontWeight: '600', color: '#475569' }}> Farm Name: </label>
+            <input placeholder="Farm Name" name="farmName" className="form-control" value={farm.farmName} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+            {errors.farmName && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.farmName}</p>}
           </div>
 
-          <div className="form-group text-left">
-            <label> Soil Type: </label>
-            <select name="soil" className="form-control" value={farm.soil} onChange={onChangeHandler}>
+          <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+            <label style={{ fontWeight: '600', color: '#475569' }}> Farm Area (Acres): </label>
+            <input placeholder="Farm Area" name="area" className="form-control" value={farm.area} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+            {errors.area && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.area}</p>}
+          </div>
+
+          <div className="form-group text-left" style={{ marginBottom: '25px' }}>
+            <label style={{ fontWeight: '600', color: '#475569' }}> Soil Type: </label>
+            <select name="soil" className="form-control" value={farm.soil} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }}>
               <option value="">Select Soil Type</option>
               <option value="Alluvial">Alluvial</option>
               <option value="Black">Black</option>
               <option value="Lateriate">Lateriate</option>
               <option value="Red">Red</option>
             </select>
-            {errors.soil && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.soil}</p>}
+            {errors.soil && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.soil}</p>}
           </div>
 
-          <div className="form-group">
-            <button className="btn btn-success" onClick={handleValidation}>Save</button>
-            &nbsp;&nbsp;
-            <button className="btn btn-secondary" onClick={clearAll}>Reset</button>
-            &nbsp;&nbsp;
-            <button className="btn btn-warning" onClick={returnBack}>Return Back</button>
+          <div className="form-group" style={{ display: 'flex', gap: '10px' }}>
+            <button className="btn btn-success" onClick={handleValidation} style={{ flex: 1, padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}>Save</button>
+            <button className="btn btn-secondary" onClick={clearAll} style={{ flex: 1, padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}>Reset</button>
+            <button className="btn btn-warning" onClick={returnBack} style={{ flex: 1, padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}>Return</button>
           </div>
         </form>
-        <br />
-        <div>
-          {flag && <p style={{ color: "blue", fontWeight: "600" }}>New Farm Added</p>}
+        <div style={{ marginTop: '15px', textAlign: 'center' }}>
+          {flag && <p style={{ color: "#047857", fontWeight: "700", background: '#d1fae5', padding: '10px', borderRadius: '8px', border: '1px solid #a7f3d0' }}>✅ New Farm Successfully Registered!</p>}
         </div>
       </div>
     </div>

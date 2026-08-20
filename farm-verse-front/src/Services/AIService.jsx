@@ -7,3 +7,11 @@ export const getExpectedYield=(id)=>{
         withCredentials: true
    });
 }
+
+const P_URL = 'http://localhost:9696/farmverse/predict';
+
+export const getExpectedExpenses = (id) => {
+    return axios.post(`${P_URL}/${id}`, null, {
+        withCredentials: true
+    });
+}

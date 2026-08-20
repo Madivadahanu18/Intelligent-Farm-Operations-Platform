@@ -57,36 +57,74 @@ const LoginPage=()=>{
      navigate('/register');
  }
  
-   return(
-     <div className="container">
-       <div className="login-box">
-         <h2 className="text-center">User Login</h2>
-         <br/>
-         <form>
-            <div className="form-group text-left">
-               <label>User Name: </label>
-               <input placeholder="Enter Username" name="username" className="form-control" value={loginData.username} onChange={onChangeHandler} />
-                 {errors.username && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.username}</p>}
-           </div>
-           <div className="form-group text-left">
-               <label>Password: </label>
-               <input type="password" placeholder="Enter Password" name="password" className="form-control" value={loginData.password} onChange={onChangeHandler}/>
-               {errors.password && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.password}</p>}
-           </div>
-           <br/>
-           <button className='btn btn-primary w-100' onClick={handleValidation}>Submit</button>
-        </form>
-        <br/>
-        <div>
-           {!flag && <p style={{ color: "red", fontWeight: "600" }}>Invalid User Id or Password</p>}
-        </div>
-        <hr />
-        <div>
-           <button className='btn btn-info' onClick={(e) => registerNewUser(e)}>Register New User</button>
+    return (
+      <div 
+        className="login-container" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.15), rgba(15, 23, 42, 0.3)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2832&q=80')`,
+          height: '100vh',
+          overflowY: 'auto',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          padding: '40px 20px',
+          boxSizing: 'border-box'
+        }}
+      >
+        <div className="login-card-centered">
+          
+          <h1 className="login-app-title">Farm Verse Application Platform</h1>
+          <hr className="title-divider" />
+          
+          <div className="login-form-body">
+            <h2 className="login-form-title">User Login</h2>
+            <p className="login-form-subtitle">Welcome back! Please enter your credentials to manage your farm.</p>
+            
+            <form onSubmit={handleValidation}>
+               <div className="form-group text-left">
+                  <label>User Name</label>
+                  <input 
+                    placeholder="Enter Username" 
+                    name="username" 
+                    className="form-control" 
+                    value={loginData.username} 
+                    onChange={onChangeHandler} 
+                  />
+                  {errors.username && <p className="error-text">{errors.username}</p>}
+               </div>
+               
+               <div className="form-group text-left">
+                  <label>Password</label>
+                  <input 
+                    type="password" 
+                    placeholder="Enter Password" 
+                    name="password" 
+                    className="form-control" 
+                    value={loginData.password} 
+                    onChange={onChangeHandler}
+                  />
+                  {errors.password && <p className="error-text">{errors.password}</p>}
+               </div>
+               
+               <button type="submit" className='btn btn-primary w-100 login-submit-btn' onClick={handleValidation}>Submit</button>
+            </form>
+            
+            <div className="mt-3 text-center">
+               {!flag && <p style={{ color: "red", fontWeight: "600" }}>Invalid User Id or Password</p>}
+            </div>
+            
+            <hr />
+            
+            <div className="text-center">
+               <button className='btn btn-info' onClick={(e) => registerNewUser(e)}>Register New User</button>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-   );
+    );
  
 };
 export default LoginPage;

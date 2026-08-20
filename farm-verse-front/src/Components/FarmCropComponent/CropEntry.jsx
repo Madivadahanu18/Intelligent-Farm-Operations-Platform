@@ -137,57 +137,75 @@ const CropEntry = () => {
     };
 
     return (
-        <div className="container">
-            <div className="login-box">
-                <h2 className="text-center">New Crop Entry</h2>
-                <br />
+        <div 
+            style={{
+                backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2832&q=80')`,
+                height: '100vh',
+                overflowY: 'auto',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                padding: '40px 20px',
+                boxSizing: 'border-box'
+            }}
+        >
+            <div className="login-box" style={{ 
+                maxWidth: '550px', 
+                width: '100%',
+                textAlign: 'left',
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(15px)',
+                WebkitBackdropFilter: 'blur(15px)',
+                borderRadius: '24px',
+                boxShadow: '0 25px 50px rgba(0,0,0,0.2)',
+                padding: '40px'
+            }}>
+                <h2 className="text-center" style={{ color: '#0f172a', fontWeight: '800', marginBottom: '20px' }}>Register New Crop</h2>
                 <form>
-                    <div className="form-group text-left">
-                        <label>Crop Id: </label>
-                        <input placeholder="Crop Id" name="cropId" className="form-control" value={newId} readOnly />
+                    <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Crop Id: </label>
+                        <input placeholder="Crop Id" name="cropId" className="form-control" value={newId} readOnly style={{ borderRadius: '8px', border: '1px solid #cbd5e1', background: '#f1f5f9' }} />
                     </div>
-                    <div className="form-group text-left">
-                        <label>Farm ID: </label>
-                        <input placeholder="Enter Farm ID" name="farmId" className="form-control" value={crop.farmId} onChange={onChangeHandler} />
-                        {errors.farmId && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.farmId}</p>}
+                    <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Farm ID: </label>
+                        <input placeholder="Enter Farm ID" name="farmId" className="form-control" value={crop.farmId} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                        {errors.farmId && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.farmId}</p>}
                     </div>
-                    <div className="form-group text-left">
-                        <label>Crop Name: </label>
-                        <input placeholder="Crop Name" name="cropName" className="form-control" value={crop.cropName} onChange={onChangeHandler} />
-                        {errors.cropName && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.cropName}</p>}
+                    <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Crop Name: </label>
+                        <input placeholder="Crop Name" name="cropName" className="form-control" value={crop.cropName} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                        {errors.cropName && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.cropName}</p>}
                     </div>
-                    <div className="form-group text-left">
-                        <label>Crop Area: </label>
-                        <input placeholder="Crop Area" name="cropArea" className="form-control" value={crop.cropArea} onChange={onChangeHandler} />
-                        {errors.cropArea && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.cropArea}</p>}
+                    <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Crop Area: </label>
+                        <input placeholder="Crop Area" name="cropArea" className="form-control" value={crop.cropArea} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                        {errors.cropArea && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.cropArea}</p>}
                     </div>
-                    <div className="form-group text-left">
-                        <label>Sown Month & Year: </label>
-                        <input placeholder="e.g. June 2026" name="sownMonthYear" className="form-control" value={crop.sownMonthYear} onChange={onChangeHandler} />
-                        {errors.sownMonthYear && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.sownMonthYear}</p>}
+                    <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Sown Month & Year: </label>
+                        <input type="month" name="sownMonthYear" className="form-control" value={crop.sownMonthYear} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                        {errors.sownMonthYear && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.sownMonthYear}</p>}
                     </div>
-                    <div className="form-group text-left">
-                        <label>Harvest Month & Year: </label>
-                        <input placeholder="e.g. December 2026" name="harvestMonthYear" className="form-control" value={crop.harvestMonthYear} onChange={onChangeHandler} />
-                        {errors.harvestMonthYear && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.harvestMonthYear}</p>}
+                    <div className="form-group text-left" style={{ marginBottom: '15px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Harvest Month & Year: </label>
+                        <input type="month" name="harvestMonthYear" className="form-control" value={crop.harvestMonthYear} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                        {errors.harvestMonthYear && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.harvestMonthYear}</p>}
                     </div>
-                    <div className="form-group text-left">
-                        <label>Yield: </label>
-                        <input placeholder="Yield" name="yield" className="form-control" value={crop.yield} onChange={onChangeHandler} />
-                        {errors.yield && <p style={{ color: "red", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.yield}</p>}
+                    <div className="form-group text-left" style={{ marginBottom: '25px' }}>
+                        <label style={{ fontWeight: '600', color: '#475569' }}>Yield: </label>
+                        <input placeholder="Yield" name="yield" className="form-control" value={crop.yield} onChange={onChangeHandler} style={{ borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                        {errors.yield && <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "4px", textAlign: "left" }}>{errors.yield}</p>}
                     </div>
-                    <br />
-                    <div className="form-group">
-                        <button className="btn btn-success" onClick={handleValidation}>Save</button>
-                        &nbsp;&nbsp;
-                        <button className="btn btn-secondary" onClick={clearAll}>Reset</button>
-                        &nbsp;&nbsp;
-                        <button className="btn btn-warning" onClick={returnBack}>Return Back</button>
+                    <div className="form-group" style={{ display: 'flex', gap: '10px' }}>
+                        <button className="btn btn-success" onClick={handleValidation} style={{ flex: 1, padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}>Save</button>
+                        <button className="btn btn-secondary" onClick={clearAll} style={{ flex: 1, padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}>Reset</button>
+                        <button className="btn btn-warning" onClick={returnBack} style={{ flex: 1, padding: '10px', borderRadius: '8px', fontWeight: 'bold' }}>Return</button>
                     </div>
                 </form>
-                <br />
-                <div>
-                    {flag && <p style={{ color: "blue", fontWeight: "600" }}>New Crop Added</p>}
+                <div style={{ marginTop: '15px', textAlign: 'center' }}>
+                    {flag && <p style={{ color: "#047857", fontWeight: "700", background: '#d1fae5', padding: '10px', borderRadius: '8px', border: '1px solid #a7f3d0' }}>✅ New Crop Successfully Registered!</p>}
                 </div>
             </div>
         </div>

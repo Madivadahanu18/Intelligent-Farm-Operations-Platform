@@ -87,8 +87,31 @@ const RegisterUser=()=>{
 
  
    return(
-     <div className="container">
-       <div className="login-box">
+    <div 
+      style={{
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2832&q=80')`,
+        height: '100vh',
+        overflowY: 'auto',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        padding: '40px 20px',
+        boxSizing: 'border-box'
+      }}
+    >
+      <div className="login-box" style={{ 
+        maxWidth: '500px', 
+        width: '100%',
+        textAlign: 'left',
+        background: 'rgba(255, 255, 255, 0.9)',
+        backdropFilter: 'blur(15px)',
+        WebkitBackdropFilter: 'blur(15px)',
+        borderRadius: '24px',
+        boxShadow: '0 25px 50px rgba(0,0,0,0.2)',
+        padding: '40px'
+      }}>
          <h2 className="text-center">Farmer Registration</h2>
          <br/>
          <form method="post">
